@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
+
 {% block title %}Blog{% endblock %}
 {% block page_description %}Blog sayfa içeriği {% endblock %}
 {% block extracss %}{% endblock %}
@@ -8,7 +10,7 @@
 <div class="row mt-4 mb-4">
     <!-- Main Content Area -->
     <div class="col-md-8">
-        <h2 class="mb-4">Blogs</h2>
+        <h2 class="mb-4">{% translate 'Makaleler' %}</h2>
         <!-- Blog Cards (Assuming you will have dynamic content)
         -->
         <div class="col-md-12 mb-3">
@@ -21,8 +23,7 @@
                     <p class="card-text">Açıklama metni buraya
                         yazılır. Lorem ipsum dolor sit amet,
                         consectetur adipiscing elit.</p>
-                    <a href="#" class="btn
-btn-primary">Detaylar</a>
+                    <a href="#" class="btn btn-primary">{% translate 'Detaylar' %}</a>
                 </div>
             </div>
             <!-- Card 2 -->
@@ -34,8 +35,7 @@ btn-primary">Detaylar</a>
                     <p class="card-text">Açıklama metni buraya
                         yazılır. Lorem ipsum dolor sit amet,
                         consectetur adipiscing elit.</p>
-                    <a href="#" class="btn
-btn-primary">Detaylar</a>
+                    <a href="#" class="btn btn-primary">{% translate 'Detaylar' %}</a>
                 </div>
             </div>
             <!-- Add more cards as needed -->
@@ -43,10 +43,8 @@ btn-primary">Detaylar</a>
                  aria-label="Page navigation example">
                 <ul class="pagination">
                     <li class="page-item">
-                        <a class="page-link" href="#"
-                           aria-label="Previous">
-<span
-        aria-hidden="true">&laquo;</span>
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
                         </a>
                     </li>
                     <li class="page-item"><a class="page-link"
@@ -70,22 +68,19 @@ btn-primary">Detaylar</a>
     <div class="col-md-4">
         <div class="card mb-3">
             <div class="card-body">
-                <h5 class="card-title">Search</h5>
+                <h5 class="card-title">{% translate 'Ara' %}</h5>
                 <form>
                     <div class="mb-3">
-                        <input type="text" class="form-control"
-                               placeholder="Search...">
+                        <input type="text" class="form-control" placeholder="Search...">
                     </div>
-                    <button type="submit" class="btn
-btn-primary">Search
-                    </button>
+                    <button type="submit" class="btn btn-primary">{% translate 'Ara' %}</button>
                 </form>
             </div>
         </div>
         <!-- Popular Blogs -->
         <div class="card mb-3">
             <div class="card-body">
-                <h5 class="card-title mb-4">Popular Blogs</h5>
+                <h5 class="card-title mb-4">{% translate 'Popüler Makaleler' %}</h5>
                 <ul class="list-group">
                     <!-- Blog 1 -->
                     <li class="list-group-item">
@@ -138,7 +133,7 @@ btn-primary">Search
         <!-- Categories -->
         <div class="card mb-3">
             <div class="card-body">
-                <h5 class="card-title">Categories</h5>
+                <h5 class="card-title">{% translate 'Kategoriler' %}</h5>
                 <!-- List of categories -->
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Category 01</li>
@@ -152,10 +147,9 @@ btn-primary">Search
             </div>
         </div>
         <!-- Tags Cloud -->
-        <div style="margin-bottom: 60px !important;" class="card
-mt-4">
+        <div style="margin-bottom: 60px !important;" class="card mt-4">
             <div class="card-body">
-                <h5 class="card-title">Tags</h5>
+                <h5 class="card-title">{% translate 'Etiketler' %}</h5>
                 <!-- Tags cloud -->
                 <div class="col-md-12">
                     <button type="button" class="btn btn-secondary
