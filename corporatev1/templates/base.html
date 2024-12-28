@@ -2,7 +2,13 @@
 {% load i18n %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
+<!-- Dilleri listeleyebilmemi için aşağıda ki dil dosyalarını dahil edelim. -->
+{% get_current_language as CURRENT_LANGUAGE %}
+{% get_available_languages as AVAILABLE_LANGUAGES %}
+{% get_language_info_list for AVAILABLE_LANGUAGES as languages %}
+
+
 
 <head>
     <meta charset="UTF-8">
@@ -47,16 +53,32 @@
                 </li>
             </ul>
             <div class="d-flex">
+
+                
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                        {% translate 'Seçili Dil' %}
+                        {% translate 'Seçili Dil' %} {{CURRENT_LANGUAGE}}
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="languageDropdown">
-                        <li><a class="dropdown-item" href="#">{% translate 'Türkçe' %}</a></li>
-                        <li><a class="dropdown-item" href="#">{% translate 'İngilizce' %}</a></li>
+
+                        
+                        {% for language in languages %}
+                        <li>
+                            <a 
+                            
+                            {% if language.code == CURRENT_LANGUAGE %}
+                            class="dropdown-item active"
+                            {% else %}
+                            class="dropdown-item" 
+                            {% endif %}
+
+                            href="{% url 'set-language' language.code %}">{{ language.name }}</a>
+                        </li>
+                        {% endfor %}
                         <!-- Add more language options as needed -->
                     </ul>
                 </div>
+
 
             </div>
         </div>
