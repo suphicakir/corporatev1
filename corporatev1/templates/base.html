@@ -72,12 +72,14 @@
                             class="dropdown-item" 
                             {% endif %}
 
-                            href="{% url 'set-language' language.code %}">{{ language.name }}</a>
+                            href="{% url 'set_language' language.code %}">{{ language.name }}</a>
                         </li>
                         {% endfor %}
                         <!-- Add more language options as needed -->
                     </ul>
                 </div>
+                
+                
 
 
             </div>

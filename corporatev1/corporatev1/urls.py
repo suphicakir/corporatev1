@@ -29,5 +29,5 @@ urlpatterns = [
 
 urlpatterns = [
     *i18n_patterns(*urlpatterns, prefix_default_language=True),
-    path("set_language/<str:language>", set_language, name="set-language"),
+    path("set_language/<str:language>/", set_language, name="set_language"),
 ]
